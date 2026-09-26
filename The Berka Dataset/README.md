@@ -71,6 +71,6 @@ Mediana jednak różni się zaledwie o półtora punktu procentowego.
 Można zauważyć, że u części kredytobiorców z grupy niespłacającej rata pochłania dużą część wpływów.
 Ciężko jednoznacznie stwierdzić przyczynę niespłacania zadłużenia.
 
-###
+### Wszystkie zapytania i analizy w folderze `Scripts` są mojego autorstwa.
 Dane zostały przetłumaczone z języka czeskiego na język angielski z pomocą AI.
-Wszystkie zapytania i analizy w folderze `Scripts` są mojego autorstwa.
+
