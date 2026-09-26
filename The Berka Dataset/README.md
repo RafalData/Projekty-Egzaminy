@@ -30,13 +30,10 @@ Wszystkie zapytania i analizy w folderze `Scripts` są mojego autorstwa.
 
 ## Analizy
 
-1\. [01_kredyty_niesplacane.sql](Scripts/01_kredyty_niesplacane.sql)
-
-2\. [02_kwoty_okresy_raty.sql](Scripts/02_kwoty_okresy_raty.sql)
-
-3\. [03_raty_a_wynagrodzenia.sql](Scripts/03_raty_a_wynagrodzenia.sql)
-
-4\. [04_raty_a_wplywy_na_rachunek.sql](Scripts/04_raty_a_wplywy_na_rachunek.sql)
+1. [01_kredyty_niesplacane.sql](https://github.com/RafalData/Projekty-Egzaminy/blob/main/The%20Berka%20Dataset/Scripts/01_kredyty_niesplacane.sql)
+2. [02_kwoty_okresy_raty.sql](https://github.com/RafalData/Projekty-Egzaminy/blob/main/The%20Berka%20Dataset/Scripts/02_kwoty_okresy_raty.sql)
+3. [03_raty_a_wynagrodzenia.sql](https://github.com/RafalData/Projekty-Egzaminy/blob/main/The%20Berka%20Dataset/Scripts/03_raty_a_wynagrodzenia.sql)
+4. [04_raty_a_wplywy_na_rachunek.sql](https://github.com/RafalData/Projekty-Egzaminy/blob/main/The%20Berka%20Dataset/Scripts/04_raty_a_wplywy_na_rachunek.sql)
 
 
 
