@@ -5,6 +5,7 @@ Repozytorium stworzone by przedstawić pracę nad projektem The Berka Dataset
 
 
 ## Dane
+<img width="338" height="268" alt="image" src="https://github.com/user-attachments/assets/1217a3df-cc71-45f8-90b4-0eb6d1cc94f0" />
 
 Źródło: https://www.kaggle.com/datasets/marceloventura/the-berka-dataset
 
