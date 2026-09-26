@@ -39,75 +39,42 @@ Wszystkie zapytania i analizy w folderze `Scripts` są mojego autorstwa.
 
 
 
-\## Wnioski
+## Wnioski
 
 
 
-\### 1. Kredyty niespłacane (statusy B i D) 
-
-<img width="831" height="74" alt="image" src="https://github.com/user-attachments/assets/0a252c75-5a0d-4826-9d78-cb63b012fe44" />
-
-
+### 1. Kredyty niespłacane (statusy B i D) 
+<img width="824" height="67" alt="image" src="https://github.com/user-attachments/assets/3306dbc9-342a-4fa0-9f35-02934c8e1e91" />
 
 Kredyty niespłacane (statusy B i D)  stanowią 11,14% wszystkich umów, ale aż 15,09% pożyczonej kwoty.
-
 Oznacza to, że kredyty niespłacane są średnio wyższe niż spłacane terminowo. 
-
 Warto sprawdzić, czym jeszcze różnią się obie grupy.
 
 
-
-\### 2. Kwoty, okresy i raty
-
-<img width="1231" height="76" alt="image" src="https://github.com/user-attachments/assets/16a9864b-9596-4077-9178-c0c85d36f37f" />
-
-
+### 2. Kwoty, okresy i raty
+<img width="1220" height="66" alt="image" src="https://github.com/user-attachments/assets/3dc6d3a6-3e2c-40d1-8574-97b9e6eda32c" />
 
 Na podstawie danych można zauważyć, że kredyty niespłacane są zawarte średnio na dużo wyższą kwotę (ok. 40%) niż te spłacane.
-
 Dodatkowo okres kredytowania jest niemalże identyczny, co powoduje, że miesięczna rata jest wyższa o około 30%.
 
 
-
-
-
-\### 3. Raty a wynagrodzenia
-
-<img width="957" height="70" alt="image" src="https://github.com/user-attachments/assets/f74566ae-adc9-40f2-a4dd-6c848c0a8ddb" />
-
-
+### 3. Raty a wynagrodzenia
+<img width="962" height="70" alt="image" src="https://github.com/user-attachments/assets/948db73c-dbdd-4fbf-9f97-182eb5fb1a7a" />
 
 Baza danych nie zawiera pewnej informacji o zarobkach klientów. Możemy określić wyłącznie wpływy na konto, co nie daje jednoznacznej informacji o zarobkach.
-
 Określiłem więc średnią i medianę przeciętnego wynagrodzenia w regionie klienta.
-
 Jak możemy zauważyć, nie odstają one znacząco między statusem kredytów.
-
 Ale można zauważyć wyraźną różnicę między udziałem raty w pensji per status.
-
 W kredytach niespłacanych możemy zauważyć, że rata pochłania średnio o 14 punktów procentowych więcej przeciętnej pensji w regionie.
-
 Różnica nie wynika z niższych zarobków w regionie, tylko z wyższej raty.
 
 
-
-\### 4. Raty a wpływy na rachunek
-
-<img width="1109" height="75" alt="image" src="https://github.com/user-attachments/assets/a97fb835-7d06-44ad-abb2-de860217e7f8" />
-
-
+### 4. Raty a wpływy na rachunek
+<img width="1096" height="67" alt="image" src="https://github.com/user-attachments/assets/44e86e7d-7ae8-4920-8847-7e47b91eddb0" />
 
 Jak widać, różnica średniej wpływów między grupami jest marginalna.
-
 Mediana za to jest wyższa u grupy niespłacającej zadłużenia.
-
 Ale można zauważyć, że stosunek raty do średnich wpływów na konto jest o 11 punktów procentowych wyższy u grupy niespłacającej.
-
 Mediana jednak różni się zaledwie o półtora punktu procentowego.
-
 Można zauważyć, że u części kredytobiorców z grupy niespłacającej rata pochłania dużą część wpływów.
-
 Ciężko jednoznacznie stwierdzić przyczynę niespłacania zadłużenia.
-
-
-
