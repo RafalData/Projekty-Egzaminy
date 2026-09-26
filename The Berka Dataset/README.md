@@ -14,8 +14,8 @@ zanonimizowane dane czeskiego banku z lat 1993–1998:
 - ponad milion transakcji.
 
 Dane zostały przetłumaczone z języka czeskiego na język angielski z pomocą AI.
-
 Wszystkie zapytania i analizy w folderze `Scripts` są mojego autorstwa.
+
 
 ### Ograniczenia danych
 
@@ -23,9 +23,8 @@ Wszystkie zapytania i analizy w folderze `Scripts` są mojego autorstwa.
 - Rachunek może mieć dwóch użytkowników, więc wpływy to raczej dochód gospodarstwa domowego niżeli jednej osoby.
 - Grupa kredytów niespłacanych jest mała (76 umów), więc pojedyncze przypadki mogą wyraźnie przesuwać średnią.
 
+
 ## Analizy
-
-
 
 1\. \[01\_kredyty\_niesplacane.sql](Scripts/01\_kredyty\_niesplacane.sql)
 
