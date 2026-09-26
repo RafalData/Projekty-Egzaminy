@@ -29,13 +29,13 @@ Wszystkie zapytania i analizy w folderze `Scripts` są mojego autorstwa.
 
 ## Analizy
 
-1\. \[01\_kredyty\_niesplacane.sql](Scripts/01\_kredyty\_niesplacane.sql)
+1\. [01\_kredyty\_niesplacane.sql](Scripts/01_kredyty_niesplacane.sql)
 
-2\. \[02\_kwoty\_okresy\_raty.sql](Scripts/02\_kwoty\_okresy\_raty.sql)
+2\. [02\_kwoty\_okresy\_raty.sql](Scripts/02_kwoty_okresy_raty.sql)
 
-3\. \[03\_raty\_a\_wynagrodzenia.sql](Scripts/03\_raty\_a\_wynagrodzenia.sql)
+3\. [03\_raty\_a\_wynagrodzenia.sql](Scripts/03_raty_a_wynagrodzenia.sql)
 
-4\. \[04\_raty\_a\_wplywy\_na\_rachunek.sql](Scripts/04\_raty\_a\_wplywy\_na\_rachunek.sql)
+4\. [04\_raty\_a\_wplywy\_na\_rachunek.sql](Scripts/04_raty_a_wplywy_na_rachunek.sql)
 
 
 
