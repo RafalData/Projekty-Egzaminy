@@ -14,12 +14,6 @@ zanonimizowane dane czeskiego banku z lat 1993–1998:
 - 682 kredyty, 
 - ponad milion transakcji.
 
-Dane zostały przetłumaczone z języka czeskiego na język angielski z pomocą AI.
-
-Wszystkie zapytania i analizy w folderze `Scripts` są mojego autorstwa.
-
-
-
 ### Ograniczenia danych
 
 - Dane nie zawierają informacji o indywidualnych zarobkach klientów. Wynagrodzenie to średnia dla regionu, a wpływy na rachunek to tylko przybliżenie dochodu.
@@ -76,3 +70,7 @@ Ale można zauważyć, że stosunek raty do średnich wpływów na konto jest o 
 Mediana jednak różni się zaledwie o półtora punktu procentowego.
 Można zauważyć, że u części kredytobiorców z grupy niespłacającej rata pochłania dużą część wpływów.
 Ciężko jednoznacznie stwierdzić przyczynę niespłacania zadłużenia.
+
+
+Dane zostały przetłumaczone z języka czeskiego na język angielski z pomocą AI.
+Wszystkie zapytania i analizy w folderze `Scripts` są mojego autorstwa.
