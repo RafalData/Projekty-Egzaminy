@@ -1,52 +1,29 @@
-\# Berka\_portfolio
+# The Berka Dataset
 
 Repozytorium stworzone by przedstawić pracę nad projektem The Berka Dataset
 
 
 
-\## Dane
-
-
+## Dane
 
 Źródło: https://www.kaggle.com/datasets/marceloventura/the-berka-dataset
 
 zanonimizowane dane czeskiego banku z lat 1993–1998: 
+- 4 500 rachunków, 
+- 682 kredyty, 
+- ponad milion transakcji.
 
-\- 4 500 rachunków, 
+Dane zostały przetłumaczone z języka czeskiego na język angielski z pomocą AI.
 
-\- 682 kredyty, 
+Wszystkie zapytania i analizy w folderze `Scripts` są mojego autorstwa.
 
-\- ponad milion transakcji.
+### Ograniczenia danych
 
+- Dane nie zawierają informacji o indywidualnych zarobkach klientów. Wynagrodzenie to średnia dla regionu, a wpływy na rachunek to tylko przybliżenie dochodu.
+- Rachunek może mieć dwóch użytkowników, więc wpływy to raczej dochód gospodarstwa domowego niżeli jednej osoby.
+- Grupa kredytów niespłacanych jest mała (76 umów), więc pojedyncze przypadki mogą wyraźnie przesuwać średnią.
 
-
-<img width="337" height="447" alt="image" src="https://github.com/user-attachments/assets/95ef8c2a-44c9-474e-8b73-eac87013425d" />
-
-
-
-\- `raw` – dane zaimportowane 1:1 z plików CSV kreatorem importu DBeavera.
-
-\- `core` – poprawne typy danych, daty, czeskie kody
-
-&#x20; przetłumaczone na angielski. Przygotowana z pomocą AI, nie jest częścią repozytorium.
-
-
-
-Wszystkie zapytania i analizy w folderze `scripts` są mojego autorstwa.
-
-
-
-\### Ograniczenia danych
-
-\- Dane nie zawierają informacji o indywidualnych zarobkach klientów. Wynagrodzenie to średnia dla regionu, a wpływy na rachunek to tylko przybliżenie dochodu.
-
-\- Rachunek może mieć dwóch użytkowników, więc wpływy to raczej dochód gospodarstwa domowego niżeli jednej osoby.
-
-\- Grupa kredytów niespłacanych jest mała (76 umów), więc pojedyncze przypadki mogą wyraźnie przesuwać średnią.
-
-&#x20; 
-
-\## Analizy
+## Analizy
 
 
 
