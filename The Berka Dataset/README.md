@@ -18,11 +18,13 @@ Dane zostały przetłumaczone z języka czeskiego na język angielski z pomocą 
 Wszystkie zapytania i analizy w folderze `Scripts` są mojego autorstwa.
 
 
+
 ### Ograniczenia danych
 
 - Dane nie zawierają informacji o indywidualnych zarobkach klientów. Wynagrodzenie to średnia dla regionu, a wpływy na rachunek to tylko przybliżenie dochodu.
 - Rachunek może mieć dwóch użytkowników, więc wpływy to raczej dochód gospodarstwa domowego niżeli jednej osoby.
 - Grupa kredytów niespłacanych jest mała (76 umów), więc pojedyncze przypadki mogą wyraźnie przesuwać średnią.
+
 
 
 ## Analizy
