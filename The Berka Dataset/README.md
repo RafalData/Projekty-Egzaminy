@@ -14,6 +14,7 @@ zanonimizowane dane czeskiego banku z lat 1993–1998:
 - ponad milion transakcji.
 
 Dane zostały przetłumaczone z języka czeskiego na język angielski z pomocą AI.
+
 Wszystkie zapytania i analizy w folderze `Scripts` są mojego autorstwa.
 
 
