@@ -49,4 +49,4 @@ Baza danych będzie na bieżąco aktualizowana i uzupełniana o nowe zakupy. Bę
 - Kolumna `zaplacono` wylicza się automatycznie i nie jest uzupełniana ręcznie.
 
 ## Excel
-Excel pobiera dane bezpośrednio z bazy MySQL przez Power Query i odświeża je przy otwarciu pliku. Szczegóły w [`Excel/README.md`](./Excel).
+Excel pobiera dane bezpośrednio z bazy MySQL przez Power Query i odświeża je przy otwarciu pliku. Szczegóły w [`Excel/README.md`](./Excel/README.md).
