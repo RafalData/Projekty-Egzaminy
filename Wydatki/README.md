@@ -41,19 +41,7 @@ Baza danych do śledzenia domowych wydatków na podstawie paragonów. Celem proj
 Te same analizy, które powstaną w SQL, zostaną wykonane w Excelu, aby pokazać dwa podejścia do jednego problemu:
 
 - **Power Query**: import danych z bazy lub pliku CSV oraz przekształcenia (np. kolumna z miesiącem, typy danych),
-- **funkcje**: `SUMA.WARUNKÓW`, `XLOOKUP`, `FILTRUJ`, `SORTUJ`,
+- **funkcje**,
 - **tabele przestawne** z fragmentatorami,
 - **dashboard** z wykresami podsumowującymi wydatki.
 
-Planowane porównanie:
-
-| Pytanie | SQL | Excel |
-|---|---|---|
-| Wydatki w miesiącu według kategorii | `GROUP BY` + `SUM` | tabela przestawna |
-| Kwota zaoszczędzona na rabatach | `SUM(rabat)` | `SUMA.WARUNKÓW` |
-| Najdroższe zakupy | `ORDER BY` + `LIMIT` | `SORTUJ` + `WEŹ` |
-
-## Jak uruchomić
-
-1. Uruchom `SQL/01_schemat.sql`. Skrypt utworzy bazę `wydatki` i tabelę `zakupy`.
-2. Uruchom `SQL/02_dane.sql`, aby wczytać przykładowe dane.
