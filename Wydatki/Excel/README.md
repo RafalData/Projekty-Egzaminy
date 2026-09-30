@@ -13,3 +13,7 @@ Te same analizy wydatków co w części SQL, wykonane w Excelu, aby pokazać dwa
 Pierwszą wersje importu opierałem na eksporcie tabeli `zakupy` z MySQL do pliku CSV. Następnie wrzuciłem plik poprzez Power Query (Dane → Z pliku tekstowego/CSV).
 Jednak to rozwiązanie było trochę uciązliwe, każda aktualizacja wymagała ponownego eksportu. 
 Po odkryciu możliwości bezpośredniego połączenia z bazą zastąpiłem ten krok połączeniem przez Power Query, co wyeliminowało ręczne przenoszenie plików.
+
+## Pomysły, które być może wprowadzę
+
+Chcę, aby dane można było dodawać na dwa sposoby: zarówno bezpośrednio w MySQL, jak i przez Excel. W tym celu planuję stworzyć arkusz `Nowe zakupy`, który wykorzystam jako formularz do wprowadzania paragonów. Wpisane w nim dane będą przesyłane do bazy makrem VBA(w przyszłości być może skryptem w Pythonie). Arkusz będzie czyszczony po wysłaniu, dzięki temu baza danych pozostanie jedynym miejscem przechowywania danych i nie powstaną rozbieżności między Excelem a MySQL.
