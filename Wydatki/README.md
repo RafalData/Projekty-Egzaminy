@@ -1,6 +1,7 @@
 # Wydatki
 
 Baza danych do śledzenia domowych wydatków na podstawie paragonów. Celem projektu jest analiza miesięcznych kosztów i szukanie oszczędności, a jednocześnie pokazanie tych samych analiz wykonanych w różnych narzędziach: SQL, Excel, a w kolejnych etapach Power BI i Python.
+Baza danych będzie na bieżąco aktualizowana i uzupełniana o nowe zakupy. Będzie to regularnie uzupełniany projekt, aby stale pracować z narzędziami typu Excel i SQL.
 
 #### Praca na MySQL
 
@@ -35,13 +36,3 @@ Baza danych do śledzenia domowych wydatków na podstawie paragonów. Celem proj
 - Dane przepisywane są wprost z paragonu: `kwota` to cena pozycji, a `rabat` to kwota rabatu.
 - Produkty na wagę zapisywane są w kilogramach (np. `0.534`), a produkty paczkowane w sztukach, z gramaturą w nazwie.
 - Kolumna `zaplacono` wylicza się automatycznie i nie jest uzupełniana ręcznie.
-
-## Plany: Excel
-
-Te same analizy, które powstaną w SQL, zostaną wykonane w Excelu, aby pokazać dwa podejścia do jednego problemu:
-
-- **Power Query**: import danych z bazy lub pliku CSV oraz przekształcenia (np. kolumna z miesiącem, typy danych),
-- **funkcje**,
-- **tabele przestawne** z fragmentatorami,
-- **dashboard** z wykresami podsumowującymi wydatki.
-
