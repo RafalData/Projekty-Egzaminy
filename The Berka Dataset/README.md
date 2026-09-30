@@ -1,4 +1,4 @@
-# The Berka Dataset
+# The Berka Dataset (PostgreSQL)
 
 Repozytorium stworzone by przedstawić pracę nad projektem The Berka Dataset
 
