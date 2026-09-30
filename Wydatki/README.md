@@ -36,5 +36,5 @@ Baza danych będzie na bieżąco aktualizowana i uzupełniana o nowe zakupy. Bę
 ## Zasady wprowadzania danych
 
 - Dane przepisywane są wprost z paragonu: `kwota` to cena pozycji, a `rabat` to kwota rabatu.
-- Produkty na wagę zapisywane są w kilogramach (np. `0.534`), a produkty paczkowane w sztukach, z gramaturą w nazwie.
+- Produkty na wagę zapisywane są w kilogramach (np. `0.534`), a produkty paczkowane w sztukach, z gramaturą w nazwie. Wyjątkiem jest karma dla kotów, która zawsze jest zapisywana w `kg`.
 - Kolumna `zaplacono` wylicza się automatycznie i nie jest uzupełniana ręcznie.
