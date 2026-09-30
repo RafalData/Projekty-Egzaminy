@@ -11,7 +11,7 @@ Baza danych będzie na bieżąco aktualizowana i uzupełniana o nowe zakupy. Bę
 
 - [x] Projekt i utworzenie bazy danych (MySQL)
 - [x] Wprowadzanie danych z paragonów
-- [x] Import danych do Excela (Power Query)
+- [x] Połączenie Excela z bazą danych (Power Query)
 - [ ] Analizy w SQL
 - [ ] Analizy i dashboard w Excelu
 - [ ] Dashboard w Power BI
@@ -22,7 +22,7 @@ Baza danych będzie na bieżąco aktualizowana i uzupełniana o nowe zakupy. Bę
 | Folder | Zawartość |
 |---|---|
 | [`SQL/`](./SQL) | skrypty tworzące bazę, dane i analizy |
-| [`Excel/`](./Excel) | import danych, analizy i dashboard w Excelu |
+| [`Excel/`](./Excel) | połączenie z bazą, analizy i dashboard w Excelu |
 
 ## Struktura tabeli `zakupy`
 
@@ -49,5 +49,4 @@ Baza danych będzie na bieżąco aktualizowana i uzupełniana o nowe zakupy. Bę
 - Kolumna `zaplacono` wylicza się automatycznie i nie jest uzupełniana ręcznie.
 
 ## Excel
-
-Dane z bazy eksportowane są do pliku CSV i wczytywane do Excela przez Power Query. Szczegóły w [`Excel/README.md`](./Excel).
+Excel pobiera dane bezpośrednio z bazy MySQL przez Power Query i odświeża je przy otwarciu pliku. Szczegóły w [`Excel/README.md`](./Excel).
