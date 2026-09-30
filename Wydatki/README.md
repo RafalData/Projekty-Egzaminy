@@ -23,7 +23,7 @@ Baza danych będzie na bieżąco aktualizowana i uzupełniana o nowe zakupy. Bę
 | `produkt` | nazwa produktu |
 | `kategoria` | przeznaczenie zakupu, np. dom, koty |
 | `podkategoria` | rodzaj produktu, np. jedzenie, chemia, alkohol |
-| `kwota` | cena z paragonu przed rabatem |
+| `kwota` | łączna cena pozycji z paragonu przed rabatem, np. 2 × 7,49 zł → 14.98 |
 | `ilosc` | liczba sztuk lub waga |
 | `jednostka` | `szt`, `kg` lub `l` |
 | `rabat` | kwota rabatu (wartość dodatnia) |
