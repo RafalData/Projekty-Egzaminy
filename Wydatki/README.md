@@ -1,4 +1,4 @@
-# Wydatki (MySQL)
+# Wydatki (MySQL, Excel)
 
 Baza danych do śledzenia domowych wydatków na podstawie paragonów. Celem projektu jest analiza miesięcznych kosztów i szukanie oszczędności, a jednocześnie pokazanie tych samych analiz wykonanych w różnych narzędziach: SQL, Excel, a w kolejnych etapach Power BI i Python.
 Baza danych będzie na bieżąco aktualizowana i uzupełniana o nowe zakupy. Będzie to regularnie uzupełniany projekt, aby stale pracować z narzędziami typu Excel i SQL.
@@ -11,10 +11,18 @@ Baza danych będzie na bieżąco aktualizowana i uzupełniana o nowe zakupy. Bę
 
 - [x] Projekt i utworzenie bazy danych (MySQL)
 - [x] Wprowadzanie danych z paragonów
+- [x] Import danych do Excela (Power Query)
 - [ ] Analizy w SQL
 - [ ] Analizy i dashboard w Excelu
 - [ ] Dashboard w Power BI
 - [ ] Automatyczny import e-paragonów (Python)
+
+## Struktura folderu
+
+| Folder | Zawartość |
+|---|---|
+| [`SQL/`](./SQL) | skrypty tworzące bazę, dane i analizy |
+| [`Excel/`](./Excel) | import danych, analizy i dashboard w Excelu |
 
 ## Struktura tabeli `zakupy`
 
@@ -36,5 +44,10 @@ Baza danych będzie na bieżąco aktualizowana i uzupełniana o nowe zakupy. Bę
 ## Zasady wprowadzania danych
 
 - Dane przepisywane są wprost z paragonu: `kwota` to cena pozycji, a `rabat` to kwota rabatu.
-- Produkty na wagę zapisywane są w kilogramach (np. `0.534`), a produkty paczkowane w sztukach, z gramaturą w nazwie. Wyjątkiem jest karma dla kotów, która zawsze jest zapisywana w `kg`.
+- Produkty na wagę zapisywane są w kilogramach (np. `0.534`), a produkty paczkowane w sztukach, z gramaturą w nazwie. Wyjątki: karma dla kotów zapisywana jest w `kg`, a żwirek w `l`, aby porównywać cenę za kilogram i litr.
+- Rabaty na cały paragon wpisywane są jako osobna pozycja „Rabat na paragon” z kwotą 0 i wartością rabatu w kolumnie `rabat`. Dzięki temu suma pozycji zgadza się z kwotą do zapłaty.
 - Kolumna `zaplacono` wylicza się automatycznie i nie jest uzupełniana ręcznie.
+
+## Excel
+
+Dane z bazy eksportowane są do pliku CSV i wczytywane do Excela przez Power Query. Szczegóły w [`Excel/README.md`](./Excel).
