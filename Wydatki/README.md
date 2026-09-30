@@ -5,17 +5,13 @@ Baza danych będzie na bieżąco aktualizowana i uzupełniana o nowe zakupy. Bę
 
 ## Założenia projektowe
 
-Świadomie zdecydowałem się przechowywać dane w jednej tabeli, bez podziału na kilka powiązanych tabel. Uważam, że przy skali domowych wydatków pełna normalizacja byłaby przerostem formy nad treścią: skomplikowałaby wprowadzanie danych, a nie dałaby wyraźnych korzyści.
+Świadomie zdecydowałem się przechowywać dane w jednej tabeli, bez podziału na kilka powiązanych tabel. Uważam, że przy skali domowych wydatków pełna normalizacja byłaby przerostem formy nad treścią. Takie rozwiązanie komplikowałoby wprowadzanie danych bez wyraźnych korzyści.
 
-## Stan projektu
+## Co zawiera projekt (stan na 30.09.2026)
 
-- [x] Projekt i utworzenie bazy danych (MySQL)
-- [x] Wprowadzanie danych z paragonów
-- [x] Połączenie Excela z bazą danych (Power Query)
-- [ ] Analizy w SQL
-- [ ] Analizy i dashboard w Excelu
-- [ ] Dashboard w Power BI
-- [ ] Automatyczny import e-paragonów (Python)
+- bazę danych MySQL z tabelą `zakupy`
+- dane z pierwszych paragonów
+- połączenie Excela z bazą przez Power Query z automatycznym odświeżaniem danych
 
 ## Struktura folderu
 
