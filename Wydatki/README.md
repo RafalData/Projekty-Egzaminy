@@ -3,6 +3,10 @@
 Baza danych do śledzenia domowych wydatków na podstawie paragonów. Celem projektu jest analiza miesięcznych kosztów i szukanie oszczędności, a jednocześnie pokazanie tych samych analiz wykonanych w różnych narzędziach: SQL, Excel, a w kolejnych etapach Power BI i Python.
 Baza danych będzie na bieżąco aktualizowana i uzupełniana o nowe zakupy. Będzie to regularnie uzupełniany projekt, aby stale pracować z narzędziami typu Excel i SQL.
 
+## Założenia projektowe
+
+Świadomie zdecydowałem się przechowywać dane w jednej tabeli, bez podziału na kilka powiązanych tabel. Uważam, że przy skali domowych wydatków pełna normalizacja byłaby przerostem formy nad treścią: skomplikowałaby wprowadzanie danych, a nie dałaby wyraźnych korzyści.
+
 ## Stan projektu
 
 - [x] Projekt i utworzenie bazy danych (MySQL)
