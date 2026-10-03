@@ -1,3 +1,5 @@
+-- Paragon 1 | 2026-09-30 |
+
 SET @paragon = 1, @sklep = 'Lidl', @data = '2026-09-30';
 insert into zakupy(
 paragon_id, sklep, data, produkt, kategoria, podkategoria, kwota, ilosc, jednostka, rabat)
@@ -18,6 +20,7 @@ values
 (@paragon, @sklep, @data, 'Polędwiczki kurczak'	,'dom','jedzenie'		,11.99,1	,'szt',0),
 (@paragon, @sklep, @data, 'Sushi Tokyo'			,'dom','jedzenie'		,7.49 ,1	,'szt',0);
 
+-- Paragon 2 | 2026-09-19 |
 
 SET @paragon = 2, @sklep = 'Zooplus', @kategoria = 'koty', @data = '2026-09-19';
 INSERT INTO zakupy (paragon_id, sklep, data, produkt, kategoria, podkategoria, kwota, ilosc, jednostka, rabat)
@@ -26,3 +29,173 @@ VALUES
 (@paragon, @sklep, @data, 'Wiejska Zagroda Kitten (kurczak z łososiem)', @kategoria, 'karma sucha', 112.96, 5, 'kg', 0),
 (@paragon, @sklep, @data, 'Wild Freedom Kitten', @kategoria, 'karma mokra', 90.21, 4.8, 'kg', 0),
 (@paragon, @sklep, @data, 'Rabat na paragon', @kategoria, 'rabat', 0, 1, 'szt', 13.24);
+
+INSERT INTO zakupy (paragon_id, sklep, data, produkt, kategoria, podkategoria, kwota, ilosc, jednostka, rabat)
+VALUES
+-- Paragon 3 | 2026-09-05 |
+(3, 'lidl', '2026-09-05', 'Figi świeże', 'dom', 'jedzenie', 11.96, 4, 'szt', 6.00),
+(3, 'lidl', '2026-09-05', 'Kefir malinowy', 'dom', 'jedzenie', 2.49, 1, 'szt', 0),
+(3, 'lidl', '2026-09-05', 'Smoothie owsiane', 'dom', 'jedzenie', 7.38, 2, 'szt', 0),
+(3, 'lidl', '2026-09-05', 'BIO Vegangurt owocowy', 'dom', 'jedzenie', 22.45, 5, 'szt', 0),
+(3, 'lidl', '2026-09-05', 'Smoothie owsiane', 'dom', 'jedzenie', 3.69, 1, 'szt', 0),
+(3, 'lidl', '2026-09-05', 'Smoothie owsiane', 'dom', 'jedzenie', 3.69, 1, 'szt', 0),
+(3, 'lidl', '2026-09-05', 'Masło Ekstra', 'dom', 'jedzenie', 9.98, 2, 'szt', 0),
+(3, 'lidl', '2026-09-05', 'Sok tłoczony 750ml', 'dom', 'jedzenie', 4.79, 1, 'szt', 0),
+(3, 'lidl', '2026-09-05', 'Sushi Tokyo', 'dom', 'jedzenie', 22.47, 3, 'szt', 0),
+(3, 'lidl', '2026-09-05', 'Skyr naturalny SBA', 'dom', 'jedzenie', 8.99, 1, 'szt', 0),
+(3, 'lidl', '2026-09-05', 'Twaróg klinek półtłusty', 'dom', 'jedzenie', 3.95, 1, 'szt', 0),
+(3, 'lidl', '2026-09-05', 'Kabanosy Piratki', 'dom', 'jedzenie', 3.49, 1, 'szt', 0),
+(3, 'lidl', '2026-09-05', 'Bułka z ziarnami', 'dom', 'jedzenie', 2.70, 2, 'szt', 0),
+(3, 'lidl', '2026-09-05', 'Syrop z sokiem 20%', 'dom', 'jedzenie', 9.99, 1, 'szt', 0),
+(3, 'lidl', '2026-09-05', 'Kaucja', 'kaucja', 'kaucja', 2.00, 4, 'szt', 0),
+
+-- Paragon 4 | 2026-09-09 | zapłacono 94,81
+(4, 'lidl', '2026-09-09', 'Figi świeże', 'dom', 'jedzenie', 11.96, 4, 'szt', 6.00),
+(4, 'lidl', '2026-09-09', 'Arbuz polski', 'dom', 'jedzenie', 25.81, 3.692, 'kg', 0),
+(4, 'lidl', '2026-09-09', 'Bułka Ziarnella', 'dom', 'jedzenie', 1.59, 1, 'szt', 0),
+(4, 'lidl', '2026-09-09', 'Precel z solą', 'dom', 'jedzenie', 1.79, 1, 'szt', 0),
+(4, 'lidl', '2026-09-09', 'Bułka mleczna', 'dom', 'jedzenie', 2.24, 2, 'szt', 0),
+(4, 'lidl', '2026-09-09', 'Serek śmietankowy', 'dom', 'jedzenie', 4.69, 1, 'szt', 0),
+(4, 'lidl', '2026-09-09', 'Sushi Tokyo', 'dom', 'jedzenie', 22.47, 3, 'szt', 0),
+(4, 'lidl', '2026-09-09', 'Reklamówka', 'dom', 'inne', 0.79, 1, 'szt', 0),
+(4, 'lidl', '2026-09-09', 'Pinsa 230g', 'dom', 'jedzenie', 10.49, 1, 'szt', 0),
+(4, 'lidl', '2026-09-09', 'Jeżyny Legsad 125g', 'dom', 'jedzenie', 9.99, 1, 'szt', 0),
+(4, 'lidl', '2026-09-09', 'Maliny 125g', 'dom', 'jedzenie', 8.99, 1, 'szt', 0),
+
+-- Paragon 5 | 2026-09-11 | zapłacono 221,40
+(5, 'lidl', '2026-09-11', 'Woda Muszynianka 1,5l', 'dom', 'jedzenie', 39.48, 12, 'szt', 21.08),
+(5, 'lidl', '2026-09-11', 'Filet z kurczaka świeży', 'dom', 'jedzenie', 26.02, 1.049, 'kg', 11.33),
+(5, 'lidl', '2026-09-11', 'Coca-Cola 2l', 'dom', 'jedzenie', 21.90, 2, 'szt', 8.83),
+(5, 'lidl', '2026-09-11', 'Podudzie z kurczaka XXL', 'dom', 'jedzenie', 13.76, 1.059, 'kg', 7.34),
+(5, 'lidl', '2026-09-11', 'Awokado zielone', 'dom', 'jedzenie', 11.98, 2, 'szt', 6.39),
+(5, 'lidl', '2026-09-11', 'Ser Hochland 90g', 'dom', 'jedzenie', 25.83, 7, 'szt', 1.69),
+(5, 'lidl', '2026-09-11', 'Żeberka wieprzowe', 'dom', 'jedzenie', 20.58, 0.858, 'kg', 1.35),
+(5, 'lidl', '2026-09-11', 'BIO Vegangurt owocowy', 'dom', 'jedzenie', 17.96, 4, 'szt', 1.17),
+(5, 'lidl', '2026-09-11', 'Płatki Lion / Cini Minis', 'dom', 'jedzenie', 15.99, 1, 'szt', 1.05),
+(5, 'lidl', '2026-09-11', 'Frankfurterki', 'dom', 'jedzenie', 10.93, 1, 'szt', 0.71),
+(5, 'lidl', '2026-09-11', 'Pinsa 230g', 'dom', 'jedzenie', 10.49, 1, 'szt', 0.69),
+(5, 'lidl', '2026-09-11', 'Boczek wędzony słupki', 'dom', 'jedzenie', 9.85, 1, 'szt', 0.64),
+(5, 'lidl', '2026-09-11', 'Porcja rosołowa z indyka', 'dom', 'jedzenie', 9.39, 0.723, 'kg', 0.61),
+(5, 'lidl', '2026-09-11', 'Włoszczyzna pęczek', 'dom', 'jedzenie', 7.99, 1, 'szt', 0.52),
+(5, 'lidl', '2026-09-11', 'Mix sałat klasyczny 200g', 'dom', 'jedzenie', 5.45, 1, 'szt', 0.36),
+(5, 'lidl', '2026-09-11', 'Podroby z kurczaka', 'koty', 'karma surowa', 4.99, 1, 'szt', 0.33),
+(5, 'lidl', '2026-09-11', 'Pomidory malinowe polskie', 'dom', 'jedzenie', 4.62, 0.462, 'kg', 0.30),
+(5, 'lidl', '2026-09-11', 'Cebula żółta', 'dom', 'jedzenie', 3.72, 1.066, 'kg', 0.24),
+(5, 'lidl', '2026-09-11', 'Oranżada Fantazja', 'dom', 'jedzenie', 3.49, 1, 'szt', 0.23),
+(5, 'lidl', '2026-09-11', 'Oranżada Fantazja', 'dom', 'jedzenie', 3.49, 1, 'szt', 0.23),
+(5, 'lidl', '2026-09-11', 'Bułka mleczna', 'dom', 'jedzenie', 3.36, 3, 'szt', 0.22),
+(5, 'lidl', '2026-09-11', 'Reklamówka', 'dom', 'inne', 3.16, 4, 'szt', 0.21),
+(5, 'lidl', '2026-09-11', 'Natka pietruszki', 'dom', 'jedzenie', 2.99, 1, 'szt', 0.20),
+(5, 'lidl', '2026-09-11', 'Chleb tostowy pszenny', 'dom', 'jedzenie', 2.89, 1, 'szt', 0.19),
+(5, 'lidl', '2026-09-11', 'Kaucja', 'kaucja', 'kaucja', 7.00, 14, 'szt', 0),
+
+-- Paragon 6 | 2026-09-12 | zapłacono 78,54
+(6, 'lidl', '2026-09-12', 'Banany Bio', 'dom', 'jedzenie', 6.99, 0.778, 'kg', 1.56),
+(6, 'lidl', '2026-09-12', 'Sok tłoczony 750ml', 'dom', 'jedzenie', 4.79, 1, 'szt', 0),
+(6, 'lidl', '2026-09-12', 'Sok tłoczony 750ml', 'dom', 'jedzenie', 4.79, 1, 'szt', 0),
+(6, 'lidl', '2026-09-12', 'Rożek lodowy śmietankowo-truskawkowy', 'dom', 'przekąski', 5.96, 4, 'szt', 0),
+(6, 'lidl', '2026-09-12', 'Cukier puder Diamant', 'dom', 'jedzenie', 2.39, 1, 'szt', 0),
+(6, 'lidl', '2026-09-12', 'Masło Ekstra', 'dom', 'jedzenie', 14.97, 3, 'szt', 0),
+(6, 'lidl', '2026-09-12', 'Serek wiejski Piątnica', 'dom', 'jedzenie', 5.98, 2, 'szt', 0),
+(6, 'lidl', '2026-09-12', 'Serek śmietankowy', 'dom', 'jedzenie', 4.69, 1, 'szt', 0),
+(6, 'lidl', '2026-09-12', 'Smoothie owsiane', 'dom', 'jedzenie', 3.69, 1, 'szt', 0),
+(6, 'lidl', '2026-09-12', 'Smoothie owsiane', 'dom', 'jedzenie', 7.38, 2, 'szt', 0),
+(6, 'lidl', '2026-09-12', 'Drożdże Babuni', 'dom', 'jedzenie', 1.29, 1, 'szt', 0),
+(6, 'lidl', '2026-09-12', 'Chipsy solone 130g', 'dom', 'przekąski', 8.69, 1, 'szt', 0),
+(6, 'lidl', '2026-09-12', 'Mascarpone 250g', 'dom', 'jedzenie', 6.99, 1, 'szt', 0),
+(6, 'lidl', '2026-09-12', 'Kaucja', 'kaucja', 'kaucja', 1.50, 3, 'szt', 0),
+
+-- Paragon 7 | 2026-09-17 | zapłacono 278,41
+(7, 'lidl', '2026-09-17', 'Cukier biały', 'dom', 'jedzenie', 19.90, 10, 'szt', 10.54),
+(7, 'lidl', '2026-09-17', 'Mięso mielone z łopatki', 'dom', 'jedzenie', 25.98, 2, 'szt', 7.08),
+(7, 'lidl', '2026-09-17', 'Bataty', 'dom', 'jedzenie', 5.11, 0.426, 'kg', 1.89),
+(7, 'lidl', '2026-09-17', 'Syrop z sokiem 20%', 'dom', 'jedzenie', 19.98, 2, 'szt', 1.08),
+(7, 'lidl', '2026-09-17', 'Syrop Monin', 'dom', 'jedzenie', 19.99, 1, 'szt', 1.08),
+(7, 'lidl', '2026-09-17', 'Syrop Monin', 'dom', 'jedzenie', 19.99, 1, 'szt', 1.08),
+(7, 'lidl', '2026-09-17', 'Sushi Tokyo', 'dom', 'jedzenie', 14.98, 2, 'szt', 0.82),
+(7, 'lidl', '2026-09-17', 'Pesto Barilla', 'dom', 'jedzenie', 14.99, 1, 'szt', 0.81),
+(7, 'lidl', '2026-09-17', 'Coca-Cola 2x2l', 'dom', 'jedzenie', 13.98, 1, 'szt', 0.76),
+(7, 'lidl', '2026-09-17', 'Dynia', 'dom', 'jedzenie', 10.37, 2.078, 'kg', 0.56),
+(7, 'lidl', '2026-09-17', 'Ser mozzarella tarty', 'dom', 'jedzenie', 8.39, 1, 'szt', 0.46),
+(7, 'lidl', '2026-09-17', 'Śmietanka UHT 30%', 'dom', 'jedzenie', 8.32, 1, 'szt', 0.45),
+(7, 'lidl', '2026-09-17', 'Sushi Tokyo', 'dom', 'jedzenie', 7.49, 1, 'szt', 0.41),
+(7, 'lidl', '2026-09-17', 'Sos tatarski Winiary', 'dom', 'jedzenie', 7.49, 1, 'szt', 0.41),
+(7, 'lidl', '2026-09-17', 'Awokado Hass', 'dom', 'jedzenie', 6.99, 1, 'szt', 0.38),
+(7, 'lidl', '2026-09-17', 'Majonez lekki Winiary', 'dom', 'jedzenie', 6.99, 1, 'szt', 0.38),
+(7, 'lidl', '2026-09-17', 'Kabanosy Exclusive 105g', 'dom', 'jedzenie', 6.79, 1, 'szt', 0.37),
+(7, 'lidl', '2026-09-17', 'Salami Pure', 'dom', 'jedzenie', 5.69, 1, 'szt', 0.31),
+(7, 'lidl', '2026-09-17', 'Papryka czerwona', 'dom', 'jedzenie', 5.51, 0.424, 'kg', 0.30),
+(7, 'lidl', '2026-09-17', 'Orzeszki w skorupce', 'dom', 'przekąski', 5.24, 1, 'szt', 0.28),
+(7, 'lidl', '2026-09-17', 'Sok tłoczony 750ml', 'dom', 'jedzenie', 4.79, 1, 'szt', 0.26),
+(7, 'lidl', '2026-09-17', 'Patyczki higieniczne', 'dom', 'higiena', 4.79, 1, 'szt', 0.26),
+(7, 'lidl', '2026-09-17', 'BIO Vegangurt owocowy', 'dom', 'jedzenie', 4.49, 1, 'szt', 0.24),
+(7, 'lidl', '2026-09-17', 'BIO Vegangurt owocowy', 'dom', 'jedzenie', 4.49, 1, 'szt', 0.24),
+(7, 'lidl', '2026-09-17', 'Rogalik waniliowo-truskawkowy', 'dom', 'przekąski', 3.99, 1, 'szt', 0.22),
+(7, 'lidl', '2026-09-17', 'Jabłka wczesne', 'dom', 'jedzenie', 3.97, 0.662, 'kg', 0.22),
+(7, 'lidl', '2026-09-17', 'Ciasto francuskie', 'dom', 'jedzenie', 3.84, 1, 'szt', 0.21),
+(7, 'lidl', '2026-09-17', 'Twaróg klinek półtłusty', 'dom', 'jedzenie', 3.95, 1, 'szt', 0.21),
+(7, 'lidl', '2026-09-17', 'Precel z solą', 'dom', 'jedzenie', 3.58, 2, 'szt', 0.20),
+(7, 'lidl', '2026-09-17', 'Oranżada Fantazja', 'dom', 'jedzenie', 3.49, 1, 'szt', 0.19),
+(7, 'lidl', '2026-09-17', 'Kluski na parze', 'dom', 'jedzenie', 3.49, 1, 'szt', 0.19),
+(7, 'lidl', '2026-09-17', 'Cukier trzcinowy Diamant', 'dom', 'jedzenie', 3.39, 1, 'szt', 0.18),
+(7, 'lidl', '2026-09-17', 'Napój energetyczny Black Zero', 'dom', 'jedzenie', 2.99, 1, 'szt', 0.16),
+(7, 'lidl', '2026-09-17', 'Cukinia', 'dom', 'jedzenie', 2.76, 0.460, 'kg', 0.14),
+(7, 'lidl', '2026-09-17', 'Napój energetyczny zero', 'dom', 'jedzenie', 1.99, 1, 'szt', 0.11),
+(7, 'lidl', '2026-09-17', 'Jabłka Gala', 'dom', 'jedzenie', 1.94, 0.388, 'kg', 0.11),
+(7, 'lidl', '2026-09-17', 'Marchew', 'dom', 'jedzenie', 1.27, 0.318, 'kg', 0.07),
+(7, 'lidl', '2026-09-17', 'Pietruszka korzeń', 'dom', 'jedzenie', 0.74, 0.106, 'kg', 0.04),
+(7, 'lidl', '2026-09-17', 'Ibuprom Sprint kapsułki', 'dom', 'leki', 14.99, 1, 'szt', 0),
+(7, 'lidl', '2026-09-17', 'Kaucja', 'kaucja', 'kaucja', 2.00, 4, 'szt', 0),
+
+-- Paragon 8 | 2026-09-21 | zapłacono 40,57
+(8, 'lidl', '2026-09-21', 'Jaja z wolnego wybiegu 10 szt.', 'dom', 'jedzenie', 21.98, 2, 'szt', 3.30),
+(8, 'lidl', '2026-09-21', 'Sushi Tokyo', 'dom', 'jedzenie', 7.49, 1, 'szt', 0),
+(8, 'lidl', '2026-09-21', 'Ciasto francuskie', 'dom', 'jedzenie', 3.84, 1, 'szt', 0),
+(8, 'lidl', '2026-09-21', 'Barista napój owsiany', 'dom', 'jedzenie', 6.79, 1, 'szt', 0),
+(8, 'lidl', '2026-09-21', 'Bułka w stylu rustykalnym', 'dom', 'jedzenie', 2.98, 2, 'szt', 0),
+(8, 'lidl', '2026-09-21', 'Reklamówka', 'dom', 'inne', 0.79, 1, 'szt', 0),
+
+-- Paragon 9 | 2026-09-23 | zapłacono 79,87
+(9, 'lidl', '2026-09-23', 'BIO Batonik owocowy', 'dom', 'przekąski', 9.16, 4, 'szt', 0),
+(9, 'lidl', '2026-09-23', 'Chusteczki wodne 99%', 'dom', 'higiena', 13.38, 2, 'szt', 0),
+(9, 'lidl', '2026-09-23', 'Kefir malinowy', 'dom', 'jedzenie', 2.49, 1, 'szt', 0),
+(9, 'lidl', '2026-09-23', 'Bułka mleczna', 'dom', 'jedzenie', 4.48, 4, 'szt', 0),
+(9, 'lidl', '2026-09-23', 'Ser Carski koperta', 'dom', 'jedzenie', 4.32, 1, 'szt', 0),
+(9, 'lidl', '2026-09-23', 'Maliny 125g', 'dom', 'jedzenie', 6.99, 1, 'szt', 0),
+(9, 'lidl', '2026-09-23', 'Jogurt naturalny 400g', 'dom', 'jedzenie', 1.79, 1, 'szt', 0),
+(9, 'lidl', '2026-09-23', 'Sushi Tokyo', 'dom', 'jedzenie', 7.49, 1, 'szt', 0),
+(9, 'lidl', '2026-09-23', 'Reklamówka', 'dom', 'inne', 0.79, 1, 'szt', 0),
+(9, 'lidl', '2026-09-23', 'Burgery wołowe 98%', 'dom', 'jedzenie', 17.99, 1, 'szt', 0),
+(9, 'lidl', '2026-09-23', 'Truskawka liofilizowana', 'dom', 'przekąski', 10.99, 1, 'szt', 0),
+
+-- Paragon 10 | 2026-09-25 08:42 | zapłacono 27,20
+(10, 'lidl', '2026-09-25', 'Napój energetyczny Black', 'dom', 'jedzenie', 2.99, 1, 'szt', 1.50),
+(10, 'lidl', '2026-09-25', 'Sok tłoczony 750ml', 'dom', 'jedzenie', 4.79, 1, 'szt', 0),
+(10, 'lidl', '2026-09-25', 'Napój energetyczny Black Zero', 'dom', 'jedzenie', 2.99, 1, 'szt', 0),
+(10, 'lidl', '2026-09-25', 'Pomidory malinowe polskie', 'dom', 'jedzenie', 14.70, 1.132, 'kg', 0),
+(10, 'lidl', '2026-09-25', 'Jabłka wczesne', 'dom', 'jedzenie', 1.89, 0.316, 'kg', 0),
+(10, 'lidl', '2026-09-25', 'Cebula żółta', 'dom', 'jedzenie', 0.34, 0.170, 'kg', 0),
+(10, 'lidl', '2026-09-25', 'Kaucja', 'kaucja', 'kaucja', 1.00, 2, 'szt', 0),
+
+-- Paragon 11 | 2026-09-25 09:26 | zapłacono 39,79
+(11, 'lidl', '2026-09-25', 'Boczek wędzony plastry', 'dom', 'jedzenie', 5.85, 1, 'szt', 0),
+(11, 'lidl', '2026-09-25', 'Sushi Tokyo', 'dom', 'jedzenie', 14.98, 2, 'szt', 0),
+(11, 'lidl', '2026-09-25', 'Pain au chocolat', 'dom', 'przekąski', 4.78, 2, 'szt', 0),
+(11, 'lidl', '2026-09-25', 'Bułka mleczna', 'dom', 'jedzenie', 2.24, 2, 'szt', 0),
+(11, 'lidl', '2026-09-25', 'Woda Cisowianka niegazowana', 'dom', 'jedzenie', 14.94, 6, 'szt', 0),
+(11, 'lidl', '2026-09-25', 'Kaucja', 'kaucja', 'kaucja', 3.00, 6, 'szt', 0),
+(11, 'lidl', '2026-09-25', 'Zwrot kaucji', 'kaucja', 'zwrot kaucji', -6.00, 12, 'szt', 0),
+
+-- Paragon 12 | 2026-09-26 | zapłacono 100,46
+(12, 'lidl', '2026-09-26', 'Prażynki Przysnacki', 'dom', 'przekąski', 6.79, 1, 'szt', 0),
+(12, 'lidl', '2026-09-26', 'Sok tłoczony 750ml', 'dom', 'jedzenie', 4.79, 1, 'szt', 0),
+(12, 'lidl', '2026-09-26', 'Sok tłoczony 750ml', 'dom', 'jedzenie', 4.79, 1, 'szt', 0),
+(12, 'lidl', '2026-09-26', 'Twaróg sernikowy', 'dom', 'jedzenie', 9.79, 1, 'szt', 0),
+(12, 'lidl', '2026-09-26', 'Chusteczki kosmetyczne z balsamem', 'dom', 'higiena', 5.99, 1, 'szt', 0),
+(12, 'lidl', '2026-09-26', 'Barista napój owsiany', 'dom', 'jedzenie', 6.79, 1, 'szt', 0),
+(12, 'lidl', '2026-09-26', 'Czekolada gorzka 74%', 'dom', 'przekąski', 15.98, 2, 'szt', 0),
+(12, 'lidl', '2026-09-26', 'Rożek lodowy śmietankowo-truskawkowy', 'dom', 'przekąski', 2.98, 2, 'szt', 0),
+(12, 'lidl', '2026-09-26', 'Lody pistacjowe Willisch', 'dom', 'przekąski', 27.99, 1, 'szt', 0),
+(12, 'lidl', '2026-09-26', 'Mascarpone 250g', 'dom', 'jedzenie', 6.99, 1, 'szt', 0),
+(12, 'lidl', '2026-09-26', 'Kabanosy Exclusive 105g', 'dom', 'jedzenie', 6.79, 1, 'szt', 0),
+(12, 'lidl', '2026-09-26', 'Reklamówka', 'dom', 'inne', 0.79, 1, 'szt', 0);
