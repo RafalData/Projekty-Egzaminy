@@ -10,7 +10,7 @@ Baza danych będzie na bieżąco aktualizowana i uzupełniana o nowe zakupy. Bę
 ## Co zawiera projekt (stan na 30.09.2026)
 
 - bazę danych MySQL z tabelą `zakupy`
-- dane z pierwszych paragonów
+- dane z paragonów
 - połączenie Excela z bazą przez Power Query z automatycznym odświeżaniem danych
 
 ## Struktura folderu
