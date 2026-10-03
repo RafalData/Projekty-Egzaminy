@@ -6,13 +6,22 @@ Baza danych będzie na bieżąco aktualizowana i uzupełniana o nowe zakupy. Bę
 ## Założenia projektowe
 
 Świadomie zdecydowałem się przechowywać dane w jednej tabeli, bez podziału na kilka powiązanych tabel. Uważam, że przy skali domowych wydatków pełna normalizacja byłaby przerostem formy nad treścią. Takie rozwiązanie komplikowałoby wprowadzanie danych bez wyraźnych korzyści.
-Dane są wpisywane ręcznie oraz przy wsparciu AI. Planuje wprowadzić automatyzację by móc dane pobierać bezpośrednio z aplikacji zakupowych.
+
 
 ## Co zawiera projekt (stan na 30.09.2026)
 
 - bazę danych MySQL z tabelą `zakupy`
 - dane z paragonów
 - połączenie Excela z bazą przez Power Query z automatycznym odświeżaniem danych
+
+## Plany wobec projektu
+
+Obecnie dane wprowadzam ręcznie lub z pomocą AI. Takie rozwiązanie jest czasochłonne i podatne na błędy,
+np. literówki czy różne nazwy tego samego produktu. Planuje wprowadzić
+**Automatyczny import danych**
+  - zdjęcia paragonów: odczyt tekstu w Pythonie i zamiana na wiersze tabeli,
+  - e-paragony z aplikacji sklepów (np. Lidl Plus),
+  - potwierdzenia zamówień ze sklepów internetowych (np. zooplus).
 
 ## Struktura folderu
 
