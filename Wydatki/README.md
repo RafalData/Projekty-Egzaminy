@@ -6,6 +6,7 @@ Baza danych będzie na bieżąco aktualizowana i uzupełniana o nowe zakupy. Bę
 ## Założenia projektowe
 
 Świadomie zdecydowałem się przechowywać dane w jednej tabeli, bez podziału na kilka powiązanych tabel. Uważam, że przy skali domowych wydatków pełna normalizacja byłaby przerostem formy nad treścią. Takie rozwiązanie komplikowałoby wprowadzanie danych bez wyraźnych korzyści.
+Dane są wpisywane ręcznie oraz przy wsparciu AI. Planuje wprowadzić automatyzację by móc dane pobierać bezpośrednio z aplikacji zakupowych.
 
 ## Co zawiera projekt (stan na 30.09.2026)
 
