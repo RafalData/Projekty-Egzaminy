@@ -8,10 +8,10 @@ Baza danych będzie na bieżąco aktualizowana i uzupełniana o nowe zakupy. Bę
 Świadomie zdecydowałem się przechowywać dane w jednej tabeli, bez podziału na kilka powiązanych tabel. Uważam, że przy skali domowych wydatków pełna normalizacja byłaby przerostem formy nad treścią. Takie rozwiązanie komplikowałoby wprowadzanie danych bez wyraźnych korzyści.
 
 
-## Co zawiera projekt (stan na 30.09.2026)
+## Co zawiera projekt (stan na 03.10.2026)
 
 - bazę danych MySQL z tabelą `zakupy`
-- dane z paragonów
+- dane z paragonów (167 wierszy)
 - połączenie Excela z bazą przez Power Query z automatycznym odświeżaniem danych
 
 ## Plany wobec projektu
