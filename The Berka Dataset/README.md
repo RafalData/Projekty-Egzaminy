@@ -24,6 +24,8 @@ zanonimizowane dane czeskiego banku z lat 1993–1998:
 
 ## Analizy
 
+<img width="960" height="540" alt="AnalizaTheBerka" src="https://github.com/user-attachments/assets/0d72d77a-94c4-4a1e-8a1a-30893999366b" />
+
 1. [01_kredyty_niesplacane.sql](https://github.com/RafalData/Projekty-Egzaminy/blob/main/The%20Berka%20Dataset/Scripts/01_kredyty_niesplacane.sql)
 2. [02_kwoty_okresy_raty.sql](https://github.com/RafalData/Projekty-Egzaminy/blob/main/The%20Berka%20Dataset/Scripts/02_kwoty_okresy_raty.sql)
 3. [03_raty_a_wynagrodzenia.sql](https://github.com/RafalData/Projekty-Egzaminy/blob/main/The%20Berka%20Dataset/Scripts/03_raty_a_wynagrodzenia.sql)
