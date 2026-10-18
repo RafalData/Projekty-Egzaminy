@@ -6,7 +6,7 @@ Projekt analityczny na danych firmy transportowej (flota, kierowcy, przejazdy, t
  
 - Źródło: [Logistics Operations Database](https://www.kaggle.com/datasets/yogape/logistics-operations-database)
 - Dane są syntetyczne, co potwierdza opis autora w [repozytorium na GitHubie](https://github.com/Xyxtvs/logistics-operations-dataset) oraz niespójności logiczne w danych (np. `years_experience`).
-- 7 tabel, okres 2022–2024, m.in. `trips` (85 410 przejazdów), `fuel_purchases` (196 442 tankowania), `trucks` (120 ciężarówek), `drivers` (150 kierowców), `safety_incidents` (170 incydentów).
+- 14 tabel, okres 2022–2024, m.in. `trips` (85 410 przejazdów), `fuel_purchases` (196 442 tankowania), `trucks` (120 ciężarówek), `drivers` (150 kierowców), `safety_incidents` (170 incydentów).
 
 ## Narzędzia 
 - **Power Query**: czyszczenie, łączenie i agregacja tabel (Merge, Group By, kolumny pomocnicze).
