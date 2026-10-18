@@ -72,7 +72,9 @@ Zdefiniowałem pytania biznesowe i podzieliłem je na cztery segmenty: bezpiecze
 - Koszty według ciężkości i według przyczyny, miesięczne koszty szkód.
 - Wykres słupkowy Top 10 i wykres liniowy kosztów miesięcznych.
 - Cztery slicery (`incident_type`, `at_fault_flag`, `injury_flag`, `Years`) podłączone do wszystkich pivotów.
-**Wnioski:** [do uzupełnienia, własnymi słowami na podstawie pulpitu]
+  
+  <img width="998" height="647" alt="image" src="https://github.com/user-attachments/assets/973d9328-f058-4d9b-a233-c0e022d6eafc" />
+**Wnioski:** [do uzupełnienia]
  
 ### 4. Analiza 2: flota (w trakcie)
  
