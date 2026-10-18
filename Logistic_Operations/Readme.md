@@ -1,6 +1,9 @@
 # Logistic_01: analiza operacji firmy transportowej w Excelu
  
 Projekt analityczny na danych firmy transportowej (flota, kierowcy, przejazdy, tankowania, serwis, incydenty). Całość wykonuje w Excelu: Power Query, tabele przestawne, slicery i wykresy przestawne.
+## Plany rozwoju
+
+Te same analizy zamierzam w przyszłości przeprowadzić również w SQL i Power BI, żeby porównać podejścia i pokazać różnice w pracy z tymi samymi danymi (m.in. czyszczenie danych, łączenie tabel, obliczanie wskaźników).
  
 ## Dane
  
