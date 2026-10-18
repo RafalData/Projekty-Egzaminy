@@ -8,3 +8,5 @@ Baza danych do śledzenia domowych wydatków na podstawie paragonów, zaprojekto
 
 ### [Logistic_Operations](./Logistic_Operations) (Excel)
 Analiza operacji firmy transportowej na syntetycznych danych (14 tabel, ok. 85 tys. przejazdów, 2022–2024). Projekt pokazuje pracę w Excelu: czyszczenie i łączenie tabel w Power Query, kontrolę jakości danych oraz tabele przestawne ze slicerami i wykresami. Cele to wskazanie kierowców generujących największe straty, analiza spalania i kosztów floty, jakość dostaw i rentowność tras. Projekt jest rozwijany na bieżąco: analiza kosztów szkód jest gotowa, analiza floty w trakcie.
+## Plany rozwoju
+Te same analizy zamierzam w przyszłości przeprowadzić również w SQL i Power BI, żeby porównać podejścia i pokazać różnice w pracy z tymi samymi danymi (m.in. czyszczenie danych, łączenie tabel, obliczanie wskaźników).
