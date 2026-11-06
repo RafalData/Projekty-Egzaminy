@@ -55,12 +55,9 @@ Okres kredytowania jest natomiast niemalże identyczny, więc wyższa kwota prze
 ### 3. Raty a wynagrodzenia
 <img width="962" height="70" alt="image" src="https://github.com/user-attachments/assets/948db73c-dbdd-4fbf-9f97-182eb5fb1a7a" />
 
-Baza danych nie zawiera pewnej informacji o zarobkach klientów. Możemy określić wyłącznie wpływy na konto, co nie daje jednoznacznej informacji o zarobkach.
-Określiłem więc średnią i medianę przeciętnego wynagrodzenia w regionie, w którym założono rachunek.
-Jak możemy zauważyć, nie odstają one znacząco między statusem kredytów.
-Ale można zauważyć wyraźną różnicę między udziałem raty w pensji per status.
-W kredytach niespłacanych rata pochłania średnio o 14 punktów procentowych więcej przeciętnej pensji w regionie.
-Różnica nie wiąże się z niższymi zarobkami w regionie, tylko z wyższą ratą.
+Baza nie zawiera zarobków klientów, dlatego jako punkt odniesienia przyjąłem przeciętne wynagrodzenie w regionie, w którym założono rachunek.
+Pensje w regionach są w obu grupach podobne, ale w grupie niespłacającej rata pochłania średnio o 14 punktów procentowych więcej przeciętnej pensji.
+Pensja regionu nie odzwierciedla jednak dochodu konkretnego klienta, dlatego sprawdzam też wpływy na rachunek.
 
 
 
