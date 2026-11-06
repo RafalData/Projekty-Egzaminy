@@ -64,15 +64,11 @@ Pensja regionu nie odzwierciedla jednak dochodu konkretnego klienta, dlatego spr
 ### 4. Raty a wpływy na rachunek
 <img width="1096" height="67" alt="image" src="https://github.com/user-attachments/assets/44e86e7d-7ae8-4920-8847-7e47b91eddb0" />
 
-Jak widać, różnica średniej wpływów między grupami jest marginalna.
-Mediana za to jest wyższa u grupy niespłacającej zadłużenia.
-Ale można zauważyć, że stosunek raty do średnich wpływów na konto jest o 11 punktów procentowych wyższy u grupy niespłacającej.
-Mediana jednak różni się zaledwie o półtora punktu procentowego.
-Oznacza to, że u części kredytobiorców z grupy niespłacającej rata pochłania dużą część wpływów, a nie u typowego klienta z tej grupy.
-Ciężko jednoznacznie stwierdzić przyczynę niespłacania zadłużenia.
+Średnie wpływy są w obu grupach podobne, a mediana jest nawet wyższa u niespłacających.
+Rata pochłania u nich średnio o 11 punktów procentowych więcej wpływów, ale w medianie różnica to tylko 1,5 punktu.
+Wysokie obciążenie ratą dotyczy więc części niespłacających, a nie typowego klienta z tej grupy, dlatego trudno jednoznacznie wskazać przyczynę niespłacania.
 
 ## Dodatkowe informacje
 Wszystkie zapytania i analizy w folderze `Scripts` są mojego autorstwa.
 Zapytania korzystają z przetłumaczonych tabel,które zostały przetłumaczone z języka czeskiego na język angielski z pomocą AI.
-Plik trans.csv jest zbyt duży, trzeba go pobrać z Kaggle. Inaczej zapytanie 04 nie zadziała.
 
