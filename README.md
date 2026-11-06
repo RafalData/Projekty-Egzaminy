@@ -4,6 +4,7 @@
 Baza danych mająca na celu pokazać umiejętność posługiwania się SQL na dużych zbiorach danych. W tym przypadku wykorzystałem dane czeskiego banku, które zostały przetłumaczone.
 
 ### [Wydatki](./Wydatki) (MySQL)
+! Na wzgląd pewnych wydarzeń prace nad tym arkuszem zostały wstrzymane !
 Baza danych do śledzenia domowych wydatków na podstawie paragonów, zaprojektowana i zbudowana od podstaw w SQL. Projekt jest rozwijany na bieżąco, a te same analizy wydatków powstaną zarówno w SQL jak i Excelu.
 
 ### [Logistic_Operations](./Logistic_Operations) (Excel) (W przyszłości SQL/PowerBI)
