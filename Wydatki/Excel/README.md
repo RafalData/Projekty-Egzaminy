@@ -1,5 +1,11 @@
 # Wydatki: Excel
 
+## Aktualnie trwa przebudowa calego projektu.
+Aktualny wyglad: 
+<img width="1919" height="1032" alt="image" src="https://github.com/user-attachments/assets/083aba0b-0dc9-4954-801d-ecc6623fc81f" />
+
+
+
 Te same analizy wydatków co w części SQL, wykonane w Excelu, aby pokazać dwa podejścia do jednego problemu.
 
 ## Import danych
