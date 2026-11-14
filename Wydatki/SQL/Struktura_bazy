@@ -1,213 +1,79 @@
-# Struktura bazy `wydatki`
-
-Opis tabel w MySQL 8: kolumny, typy danych i cel każdej z nich (stan na 14.11.2026, zgodny z `information_schema`). Skrypty tworzące tabele i dane są w tym samym folderze.
-
-## Spis tabel
-
-| Tabela | Cel |
-|---|---|
-| [`sklepy`](#sklepy) | lista sklepów |
-| [`kategorie`](#kategorie) | podkategorie wydatków z działem, rodzajem i kosztem |
-| [`konta`](#konta) | miejsca, w których leżą pieniądze (bank, gotówka, rachunek maklerski, kruszce) |
-| [`paragony`](#paragony) | nagłówek zakupu |
-| [`pozycje`](#pozycje) | produkty z paragonu |
-| [`wplywy`](#wplywy) | przychody na konto |
-| [`transfery`](#transfery) | przesunięcia pieniędzy między własnymi kontami |
-| [`cele`](#cele) | cele oszczędnościowe |
-| [`wplaty_cele`](#wplaty_cele) | wpłaty i wypłaty na cele |
-| [`reguly_kategorii`](#reguly_kategorii) | reguły przypisywania kategorii (na potrzeby przyszłego importu) |
-
-## Relacje
-
-```mermaid
-erDiagram
-    sklepy ||--o{ paragony : "sklep"
-    konta ||--o{ paragony : "zaplacono z"
-    paragony ||--|{ pozycje : "zawiera"
-    kategorie ||--o{ pozycje : "kategoria"
-    kategorie ||--o{ reguly_kategorii : "reguly"
-    konta ||--o{ wplywy : "wplyw na"
-    konta ||--o{ transfery : "z konta"
-    konta ||--o{ transfery : "na konto"
-    cele ||--o{ wplaty_cele : "wplaty"
-```
-
-## Zasady wspólne
-
-- Klucze główne to liczby nadawane automatycznie (`AUTO_INCREMENT`).
-- Kwoty pieniężne mają typ `DECIMAL`, żeby uniknąć błędów zaokrągleń.
-- Nazwy sklepów, kategorii i produktów są zapisane bez polskich znaków.
-- Tabele z danymi (`paragony`, `wplywy`, `transfery`, `cele`, `wplaty_cele`) mają kolumnę `testowe` (0 lub 1). Wiersze testowe usuwa osobny skrypt.
-- Salda kont i celów nie są przechowywane. Mają być wyliczane widokiem z zapisanych ruchów.
-
----
-
-## sklepy
-
-Lista sklepów, do których odnoszą się paragony.
-
-| Kolumna | Typ | Null | Domyślnie | Opis |
-|---|---|---|---|---|
-| `sklep_id` | INT | nie | | klucz główny |
-| `sklep` | VARCHAR(100) | nie | | nazwa sklepu, unikalna, np. `lidl`, `zooplus` |
-
-## kategorie
-
-Jeden wiersz to jedna **podkategoria** wraz z działem. Para (`nazwa_kategorii`, `podkategoria`) jest unikalna.
-
-| Kolumna | Typ | Null | Domyślnie | Opis |
-|---|---|---|---|---|
-| `kategoria_id` | INT | nie | | klucz główny, identyfikuje podkategorię |
-| `nazwa_kategorii` | VARCHAR(50) | nie | | dział, np. `dom`, `zwierzeta`, `dodatkowe`, `korekty` |
-| `podkategoria` | VARCHAR(50) | nie | | szczegół, np. `jedzenie`, `karma sucha`, `alkohol` |
-| `koszt` | ENUM('staly','zmienny') | nie | `zmienny` | `staly` to wydatek powtarzalny w stałej wysokości |
-| `rodzaj` | ENUM('konieczne','zachcianki','zbedne','korekta','transfer') | nie | | rodzaj wydatku, patrz tabela niżej |
-
-Znaczenie rodzajów:
-
-| Rodzaj | Znaczenie | W raporcie |
-|---|---|---|
-| `konieczne` | wydatki niezbędne | potrzeby |
-| `zachcianki` | świadome przyjemności | niekonieczne |
-| `zbedne` | wydatki, które chcę ograniczyć | niekonieczne |
-| `korekta` | rabat, kaucja, zwrot kaucji | poza wydatkami |
-| `transfer` | przesunięcie własnych pieniędzy | poza wydatkami |
-
-## konta
-
-Miejsca, w których fizycznie leżą pieniądze. Saldo bieżące ma być wyliczane: saldo początkowe plus wpływy, minus wydatki z tego konta, plus i minus transfery, od daty salda początkowego.
-
-| Kolumna | Typ | Null | Domyślnie | Opis |
-|---|---|---|---|---|
-| `konto_id` | INT | nie | | klucz główny |
-| `nazwa` | VARCHAR(50) | nie | | nazwa konta, unikalna |
-| `typ` | ENUM('bank','gotowka','maklerskie','kruszce') | nie | | rodzaj konta |
-| `saldo_poczatkowe` | DECIMAL(12,2) | nie | `0.00` | stan konta w dniu rozpoczęcia zapisów |
-| `data_salda_poczatkowego` | DATE | nie | | dzień, od którego liczone są ruchy |
-| `aktywne` | TINYINT(1) | nie | `1` | 0 ukrywa konto bez usuwania powiązanych danych |
-
-## paragony
-
-Nagłówek zakupu: kto, kiedy, z czego zapłacono i na ile. Dotyczy też wpisów z banku i faktur. Trójka (`sklep_id`, `nr_paragonu_sklep`, `data`) jest unikalna, co chroni przed dwukrotnym wpisaniem tego samego paragonu.
-
-| Kolumna | Typ | Null | Domyślnie | Opis |
-|---|---|---|---|---|
-| `paragon_id` | INT | nie | | klucz główny |
-| `sklep_id` | INT | nie | | klucz obcy do `sklepy` |
-| `konto_id` | INT | nie | | klucz obcy do `konta`, konto, z którego zapłacono (bank lub gotówka) |
-| `data` | DATE | nie | | data zakupu |
-| `nr_paragonu_sklep` | VARCHAR(50) | tak | | numer paragonu nadany przez sklep |
-| `suma_paragonu` | DECIMAL(10,2) | tak | | kwota do zapłaty, służy do kontroli sumy pozycji |
-| `zrodlo` | ENUM('reczny','bank','abonament','faktura','auto-import') | nie | `reczny` | skąd pochodzi wpis |
-| `utworzono` | TIMESTAMP | nie | `CURRENT_TIMESTAMP` | kiedy wpis trafił do bazy |
-| `testowe` | TINYINT(1) | nie | `0` | 1 oznacza dane testowe |
-
-## pozycje
-
-Produkty z paragonu. Każda pozycja należy do jednego paragonu i jednej podkategorii.
-
-| Kolumna | Typ | Null | Domyślnie | Opis |
-|---|---|---|---|---|
-| `pozycja_id` | INT | nie | | klucz główny |
-| `paragon_id` | INT | nie | | klucz obcy do `paragony` |
-| `kategoria_id` | INT | nie | | klucz obcy do `kategorie` |
-| `produkt` | VARCHAR(200) | nie | | nazwa produktu |
-| `kwota` | DECIMAL(10,2) | nie | | wartość całej pozycji przed rabatem (nie cena jednostkowa) |
-| `ilosc` | DECIMAL(10,3) | nie | `1.000` | liczba sztuk lub waga |
-| `jednostka` | VARCHAR(10) | nie | `szt` | `szt`, `kg` lub `l` |
-| `rabat` | DECIMAL(10,2) | nie | `0.00` | rabat na tę pozycję (wartość dodatnia) |
-| `zaplacono` | DECIMAL(10,2) | tak | | kolumna wyliczana: `kwota - rabat`, nie wpisuje się jej ręcznie |
-
-Zasady:
-- Rabat na cały paragon to osobna pozycja w dziale `korekty` z `kwotą` 0 i rabatem w kolumnie `rabat`.
-- Kaucja to pozycja w `korekty` z dodatnią `kwotą`, a zwrot kaucji z ujemną.
-- Suma `zaplacono` pozycji jednego paragonu powinna równać się `suma_paragonu`.
-
-## wplywy
-
-Przychody na konto: wypłata, zwrot, inne wpływy. Kwota musi być większa od 0.
-
-| Kolumna | Typ | Null | Domyślnie | Opis |
-|---|---|---|---|---|
-| `wplyw_id` | INT | nie | | klucz główny |
-| `konto_id` | INT | nie | | klucz obcy do `konta`, konto, na które wpłynęły pieniądze |
-| `data` | DATE | nie | | data wpływu |
-| `kwota` | DECIMAL(10,2) | nie | | kwota |
-| `zrodlo` | VARCHAR(50) | nie | | rodzaj wpływu, np. `wyplata`, `zwrot` |
-| `opis` | VARCHAR(200) | tak | | dodatkowy opis |
-| `testowe` | TINYINT(1) | nie | `0` | 1 oznacza dane testowe |
-
-## transfery
-
-Fizyczne przesunięcia pieniędzy między własnymi kontami, np. wypłata z bankomatu (bank na gotówkę) albo przelew na rachunek maklerski. Nie są wydatkami ani wpływami. Konto źródłowe i docelowe muszą być różne, a kwota większa od 0.
-
-| Kolumna | Typ | Null | Domyślnie | Opis |
-|---|---|---|---|---|
-| `transfer_id` | INT | nie | | klucz główny |
-| `data` | DATE | nie | | data transferu |
-| `z_konta_id` | INT | nie | | klucz obcy do `konta`, konto, z którego wyszły pieniądze |
-| `na_konto_id` | INT | nie | | klucz obcy do `konta`, konto, na które przyszły pieniądze |
-| `kwota` | DECIMAL(10,2) | nie | | kwota transferu |
-| `opis` | VARCHAR(200) | tak | | dodatkowy opis |
-| `testowe` | TINYINT(1) | nie | `0` | 1 oznacza dane testowe |
-
-## cele
-
-Cele oszczędnościowe. Są logiczne, czyli nie wymagają osobnego konta w banku. Cel można założyć w każdej chwili, a kwota docelowa jest opcjonalna.
-
-| Kolumna | Typ | Null | Domyślnie | Opis |
-|---|---|---|---|---|
-| `cel_id` | INT | nie | | klucz główny |
-| `nazwa` | VARCHAR(100) | nie | | nazwa celu, unikalna, np. `wakacje` |
-| `kwota_docelowa` | DECIMAL(12,2) | tak | | kwota do uzbierania |
-| `termin` | DATE | tak | | planowana data osiągnięcia celu |
-| `status` | ENUM('aktywny','osiagniety','zamkniety') | nie | `aktywny` | stan celu |
-| `utworzono` | DATE | nie | dzisiejsza data | data założenia celu |
-| `testowe` | TINYINT(1) | nie | `0` | 1 oznacza dane testowe |
-
-## wplaty_cele
-
-Ruchy na celach. Saldo celu to suma `kwoty` jego wpłat, a postęp to saldo podzielone przez kwotę docelową (tylko gdy jest podana).
-
-| Kolumna | Typ | Null | Domyślnie | Opis |
-|---|---|---|---|---|
-| `wplata_id` | INT | nie | | klucz główny |
-| `cel_id` | INT | nie | | klucz obcy do `cele` |
-| `data` | DATE | nie | | data ruchu |
-| `kwota` | DECIMAL(10,2) | nie | | dodatnia to wpłata, ujemna to wypłata lub przesunięcie, nie może być 0 |
-| `opis` | VARCHAR(200) | tak | | dodatkowy opis |
-| `testowe` | TINYINT(1) | nie | `0` | 1 oznacza dane testowe |
-
-## reguly_kategorii
-
-Reguły, które mają przypisywać kategorię na podstawie tekstu (opisu z banku albo nazwy produktu), np. wzorzec `netflix` prowadzi do podkategorii `abonamenty`. Tabela jest przygotowana pod import wyciągów bankowych. Gdy pasuje kilka reguł, wygrywa niższy `priorytet`.
-
-| Kolumna | Typ | Null | Domyślnie | Opis |
-|---|---|---|---|---|
-| `regula_id` | INT | nie | | klucz główny |
-| `wzorzec` | VARCHAR(100) | nie | | fragment tekstu do znalezienia, unikalny |
-| `kategoria_id` | INT | nie | | klucz obcy do `kategorie` |
-| `priorytet` | INT | nie | `100` | im niższa wartość, tym ważniejsza reguła |
-
----
-
-## Elementy z pierwszej wersji projektu
-
-Pierwsza wersja opierała się na jednej tabeli. Nadal są w bazie, ale nie należą do nowego modelu:
-
-| Obiekt | Opis |
-|---|---|
-| `zakupy` | tabela z pierwszej wersji (jedna tabela na wszystkie dane), nieużywana w nowym modelu |
-| `v_ostatnie_paragony` | widok oparty na `zakupy`, do przepisania pod nowe tabele |
-
-## Planowane zmiany i tabele
-
-| Zmiana | Cel |
-|---|---|
-| kolumna `waluta` w `konta` | obsługa rachunku maklerskiego w dolarach |
-| kolumna `kwota_na` w `transfery` | zapis przelewu między kontami w różnych walutach (kwota, która wyszła, i kwota, która wpłynęła) |
-| `kursy_walut` | kursy walut do przeliczania na złote |
-| tabele pośrednie importu | surowe wiersze wyciągów i dokumentów przed zapisem do tabel docelowych |
-| `sklepy_aliasy`, dziennik importów | rozpoznawanie nazw sklepów i historia importów |
-| `budzety`, `abonamenty` | plan miesięczny i stałe płatności |
-| `instrumenty`, `transakcje_inwestycyjne`, `ceny`, `migawki_majatku` | akcje, ETF-y i kruszce z codzienną wyceną |
+TABLE_NAME	COLUMN_NAME	COLUMN_TYPE	IS_NULLABLE	COLUMN_DEFAULT
+cele	cel_id	int	NO	[NULL]
+cele	nazwa	varchar(100)	NO	[NULL]
+cele	kwota_docelowa	decimal(12,2)	YES	[NULL]
+cele	termin	date	YES	[NULL]
+cele	status	enum('aktywny','osiagniety','zamkniety')	NO	aktywny
+cele	utworzono	date	NO	curdate()
+cele	testowe	tinyint(1)	NO	0
+kategorie	kategoria_id	int	NO	[NULL]
+kategorie	nazwa_kategorii	varchar(50)	NO	[NULL]
+kategorie	podkategoria	varchar(50)	NO	[NULL]
+kategorie	koszt	enum('staly','zmienny')	NO	zmienny
+kategorie	rodzaj	enum('konieczne','zachcianki','zbedne','korekta','transfer')	NO	[NULL]
+konta	konto_id	int	NO	[NULL]
+konta	nazwa	varchar(50)	NO	[NULL]
+konta	typ	enum('bank','gotowka','maklerskie','kruszce')	NO	[NULL]
+konta	saldo_poczatkowe	decimal(12,2)	NO	0.00
+konta	data_salda_poczatkowego	date	NO	[NULL]
+konta	aktywne	tinyint(1)	NO	1
+paragony	paragon_id	int	NO	[NULL]
+paragony	sklep_id	int	NO	[NULL]
+paragony	konto_id	int	NO	[NULL]
+paragony	data	date	NO	[NULL]
+paragony	nr_paragonu_sklep	varchar(50)	YES	[NULL]
+paragony	suma_paragonu	decimal(10,2)	YES	[NULL]
+paragony	zrodlo	enum('reczny','bank','abonament','faktura','auto-import')	NO	reczny
+paragony	utworzono	timestamp	NO	CURRENT_TIMESTAMP
+paragony	testowe	tinyint(1)	NO	0
+pozycje	pozycja_id	int	NO	[NULL]
+pozycje	paragon_id	int	NO	[NULL]
+pozycje	kategoria_id	int	NO	[NULL]
+pozycje	produkt	varchar(200)	NO	[NULL]
+pozycje	kwota	decimal(10,2)	NO	[NULL]
+pozycje	ilosc	decimal(10,3)	NO	1.000
+pozycje	jednostka	varchar(10)	NO	szt
+pozycje	rabat	decimal(10,2)	NO	0.00
+pozycje	zaplacono	decimal(10,2)	YES	[NULL]
+reguly_kategorii	regula_id	int	NO	[NULL]
+reguly_kategorii	wzorzec	varchar(100)	NO	[NULL]
+reguly_kategorii	kategoria_id	int	NO	[NULL]
+reguly_kategorii	priorytet	int	NO	100
+sklepy	sklep_id	int	NO	[NULL]
+sklepy	sklep	varchar(100)	NO	[NULL]
+transfery	transfer_id	int	NO	[NULL]
+transfery	data	date	NO	[NULL]
+transfery	z_konta_id	int	NO	[NULL]
+transfery	na_konto_id	int	NO	[NULL]
+transfery	kwota	decimal(10,2)	NO	[NULL]
+transfery	opis	varchar(200)	YES	[NULL]
+transfery	testowe	tinyint(1)	NO	0
+v_ostatnie_paragony	paragon_id	int	YES	[NULL]
+v_ostatnie_paragony	sklep	varchar(50)	YES	[NULL]
+v_ostatnie_paragony	data	date	NO	[NULL]
+v_ostatnie_paragony	suma	decimal(32,2)	YES	[NULL]
+wplaty_cele	wplata_id	int	NO	[NULL]
+wplaty_cele	cel_id	int	NO	[NULL]
+wplaty_cele	data	date	NO	[NULL]
+wplaty_cele	kwota	decimal(10,2)	NO	[NULL]
+wplaty_cele	opis	varchar(200)	YES	[NULL]
+wplaty_cele	testowe	tinyint(1)	NO	0
+wplywy	wplyw_id	int	NO	[NULL]
+wplywy	konto_id	int	NO	[NULL]
+wplywy	data	date	NO	[NULL]
+wplywy	kwota	decimal(10,2)	NO	[NULL]
+wplywy	zrodlo	varchar(50)	NO	[NULL]
+wplywy	opis	varchar(200)	YES	[NULL]
+wplywy	testowe	tinyint(1)	NO	0
+zakupy	zakup_id	int	NO	[NULL]
+zakupy	paragon_id	int	YES	[NULL]
+zakupy	sklep	varchar(50)	YES	[NULL]
+zakupy	produkt	varchar(200)	NO	[NULL]
+zakupy	kategoria	varchar(50)	NO	[NULL]
+zakupy	podkategoria	varchar(50)	YES	[NULL]
+zakupy	data	date	NO	[NULL]
+zakupy	kwota	decimal(10,2)	NO	[NULL]
+zakupy	ilosc	decimal(10,3)	NO	[NULL]
+zakupy	jednostka	varchar(5)	NO	szt
+zakupy	rabat	decimal(10,2)	NO	0.00
+zakupy	zaplacono	decimal(10,2)	YES	[NULL]
