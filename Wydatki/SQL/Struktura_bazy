@@ -1,0 +1,78 @@
+cele	cel_id	int	NO	
+cele	nazwa	varchar(100)	NO	
+cele	kwota_docelowa	decimal(12,2)	YES	
+cele	termin	date	YES	
+cele	status	enum('aktywny','osiagniety','zamkniety')	NO	aktywny
+cele	utworzono	date	NO	curdate()
+cele	testowe	tinyint(1)	NO	0
+kategorie	kategoria_id	int	NO	
+kategorie	nazwa_kategorii	varchar(50)	NO	
+kategorie	podkategoria	varchar(50)	NO	
+kategorie	koszt	enum('staly','zmienny')	NO	zmienny
+kategorie	rodzaj	enum('konieczne','zachcianki','zbedne','korekta','transfer')	NO	
+konta	konto_id	int	NO	
+konta	nazwa	varchar(50)	NO	
+konta	typ	enum('bank','gotowka','maklerskie','kruszce')	NO	
+konta	saldo_poczatkowe	decimal(12,2)	NO	0.00
+konta	data_salda_poczatkowego	date	NO	
+konta	aktywne	tinyint(1)	NO	1
+paragony	paragon_id	int	NO	
+paragony	sklep_id	int	NO	
+paragony	konto_id	int	NO	
+paragony	data	date	NO	
+paragony	nr_paragonu_sklep	varchar(50)	YES	
+paragony	suma_paragonu	decimal(10,2)	YES	
+paragony	zrodlo	enum('reczny','bank','abonament','faktura','auto-import')	NO	reczny
+paragony	utworzono	timestamp	NO	CURRENT_TIMESTAMP
+paragony	testowe	tinyint(1)	NO	0
+pozycje	pozycja_id	int	NO	
+pozycje	paragon_id	int	NO	
+pozycje	kategoria_id	int	NO	
+pozycje	produkt	varchar(200)	NO	
+pozycje	kwota	decimal(10,2)	NO	
+pozycje	ilosc	decimal(10,3)	NO	1.000
+pozycje	jednostka	varchar(10)	NO	szt
+pozycje	rabat	decimal(10,2)	NO	0.00
+pozycje	zaplacono	decimal(10,2)	YES	
+reguly_kategorii	regula_id	int	NO	
+reguly_kategorii	wzorzec	varchar(100)	NO	
+reguly_kategorii	kategoria_id	int	NO	
+reguly_kategorii	priorytet	int	NO	100
+sklepy	sklep_id	int	NO	
+sklepy	sklep	varchar(100)	NO	
+transfery	transfer_id	int	NO	
+transfery	data	date	NO	
+transfery	z_konta_id	int	NO	
+transfery	na_konto_id	int	NO	
+transfery	kwota	decimal(10,2)	NO	
+transfery	opis	varchar(200)	YES	
+transfery	testowe	tinyint(1)	NO	0
+v_ostatnie_paragony	paragon_id	int	YES	
+v_ostatnie_paragony	sklep	varchar(50)	YES	
+v_ostatnie_paragony	data	date	NO	
+v_ostatnie_paragony	suma	decimal(32,2)	YES	
+wplaty_cele	wplata_id	int	NO	
+wplaty_cele	cel_id	int	NO	
+wplaty_cele	data	date	NO	
+wplaty_cele	kwota	decimal(10,2)	NO	
+wplaty_cele	opis	varchar(200)	YES	
+wplaty_cele	testowe	tinyint(1)	NO	0
+wplywy	wplyw_id	int	NO	
+wplywy	konto_id	int	NO	
+wplywy	data	date	NO	
+wplywy	kwota	decimal(10,2)	NO	
+wplywy	zrodlo	varchar(50)	NO	
+wplywy	opis	varchar(200)	YES	
+wplywy	testowe	tinyint(1)	NO	0
+zakupy	zakup_id	int	NO	
+zakupy	paragon_id	int	YES	
+zakupy	sklep	varchar(50)	YES	
+zakupy	produkt	varchar(200)	NO	
+zakupy	kategoria	varchar(50)	NO	
+zakupy	podkategoria	varchar(50)	YES	
+zakupy	data	date	NO	
+zakupy	kwota	decimal(10,2)	NO	
+zakupy	ilosc	decimal(10,3)	NO	
+zakupy	jednostka	varchar(5)	NO	szt
+zakupy	rabat	decimal(10,2)	NO	0.00
+zakupy	zaplacono	decimal(10,2)	YES	
