@@ -1,4 +1,4 @@
-# Projekt wstrzymany
+# Projekt przebudowywany. Cześć plików może być przestarzała  
 
 # Wydatki (MySQL, Excel)
 
