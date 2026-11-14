@@ -4,7 +4,7 @@
 Baza danych mająca na celu pokazać umiejętność posługiwania się SQL na dużych zbiorach danych. W tym przypadku wykorzystałem dane czeskiego banku, które zostały przetłumaczone.
 
 ### [Wydatki](./Wydatki) (MySQL)
-> Projekt aktualnie rozwijany.<
+**Projekt aktualnie rozwijany.**
 Baza danych do śledzenia domowych finansów na podstawie paragonów, faktur i wyciągów bankowych, zaprojektowana i zbudowana od podstaw w SQL. MySQL jest jedynym miejscem przechowywania danych, a Excel (Power Query) służy do wyciągania danych z widoków i tworzenia raportu
 
 ### [Logistic_Operations](./Logistic_Operations) (Excel) (W przyszłości SQL/PowerBI)
